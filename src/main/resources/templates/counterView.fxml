@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<fx:root xmlns:fx="http://javafx.com/fxml" type="HBox" styleClass="counterMainContainer">
+
+    <GridPane styleClass="counterCircle">
+        <columnConstraints>
+            <ColumnConstraints percentWidth="16.0"/>
+            <ColumnConstraints percentWidth="16.0"/>
+            <ColumnConstraints percentWidth="16.0"/>
+            <ColumnConstraints percentWidth="16.0"/>
+            <ColumnConstraints percentWidth="16.0"/>
+            <ColumnConstraints percentWidth="16.0"/>
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints percentHeight="30.0"/>
+            <RowConstraints percentHeight="25.0"/>
+            <RowConstraints percentHeight="20.0"/>
+            <RowConstraints percentHeight="25.0"/>
+        </rowConstraints>
+
+        <TextField GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="6"
+               GridPane.halignment="CENTER" GridPane.valignment="BOTTOM"
+               fx:id="counterName" styleClass="counterName"/>
+        <Label GridPane.columnIndex="0" GridPane.rowIndex="1"
+               GridPane.columnSpan="2" GridPane.rowSpan="2"
+               fx:id="hoursLabel" styleClass="counterLabel"/>
+        <Spinner GridPane.columnIndex="0" GridPane.rowIndex="1"
+                 GridPane.columnSpan="2" GridPane.rowSpan="2"
+                 min="0" max="23"
+                 fx:id="hoursSpinner" styleClass="split-arrows-vertical"/>
+        <Label GridPane.columnIndex="2" GridPane.rowIndex="1"
+               GridPane.columnSpan="2" GridPane.rowSpan="2"
+               fx:id="minutesLabel" styleClass="counterLabel"/>
+        <Spinner GridPane.columnIndex="2" GridPane.rowIndex="1"
+                 GridPane.columnSpan="2" GridPane.rowSpan="2"
+                 min="0" max="59"
+                 fx:id="minutesSpinner" styleClass="split-arrows-vertical"/>
+        <Label GridPane.columnIndex="4" GridPane.rowIndex="1"
+               GridPane.columnSpan="2" GridPane.rowSpan="2"
+               fx:id="secondsLabel" styleClass="counterLabel"/>
+        <Spinner GridPane.columnIndex="4" GridPane.rowIndex="1"
+                 GridPane.columnSpan="2" GridPane.rowSpan="2"
+                 min="0" max="59"
+                 fx:id="secondsSpinner" styleClass="split-arrows-vertical"/>
+        <Button GridPane.columnIndex="2" GridPane.rowIndex="3" GridPane.columnSpan="2"
+                GridPane.halignment="CENTER" GridPane.valignment="TOP"
+                onAction="#delete" styleClass="deleteButton"
+                fx:id="delete"/>
+        <Button GridPane.columnIndex="1" GridPane.rowIndex="3" GridPane.columnSpan="2"
+                GridPane.halignment="LEFT" GridPane.valignment="TOP"
+                onAction="#addTime" styleClass="changeTimeButton, addTimeButton"
+                fx:id="addTime" text="+1"/>
+        <Button GridPane.columnIndex="3" GridPane.rowIndex="3" GridPane.columnSpan="2"
+                GridPane.halignment="RIGHT" GridPane.valignment="TOP"
+                onAction="#subtractTime" styleClass="changeTimeButton, subtractButton"
+                fx:id="subtractTime" text="-1"/>
+    </GridPane>
+
+</fx:root>

@@ -1,0 +1,57 @@
+#container {
+    -fx-pref-width: 700;
+    -fx-pref-height: 550;
+}
+
+#countersListContainer {
+    -fx-spacing: 20;
+    -fx-padding: 10 0 10 0;
+    -fx-fit-to-height: true;
+    -fx-fit-to-width: true;
+}
+
+.toolbar {
+    -fx-background-color: #1978c1;
+    -fx-padding: 20 5 30 5;
+    -fx-spacing: 10;
+}
+
+.separator {
+    -fx-background-color: white;
+}
+
+.toolbarButton {
+    -fx-background-color: #1978c1;
+    -fx-text-fill: white;
+    -fx-font-size: 18;
+    -fx-max-width: 1000;
+    -fx-alignment: baseline-left;
+}
+
+.toolbarButton:hover {
+    -fx-background-color: #2382cb;
+    -fx-text-fill: white;
+    -fx-font-size: 18;
+    -fx-max-width: 1000;
+    -fx-alignment: baseline-left;
+}
+
+.timerButton {
+    -fx-background-color: #1978c1;
+    -fx-text-fill: white;
+    -fx-font-size: 18;
+    -fx-max-width: 1000;
+    -fx-alignment: baseline-left;
+    -fx-border-color: white;
+    -fx-border-width: 1;
+    -fx-border-radius: 15;
+}
+
+.timerButton:hover {
+    -fx-background-color: #2382cb;
+    -fx-background-radius: 15;
+    -fx-text-fill: white;
+    -fx-font-size: 18;
+    -fx-max-width: 1000;
+    -fx-alignment: baseline-left;
+}

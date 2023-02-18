@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<GridPane xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:id="container">
+
+    <columnConstraints>
+        <ColumnConstraints percentWidth="30.0"/>
+        <ColumnConstraints percentWidth="70.0"/>
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints percentHeight="100.0"/>
+    </rowConstraints>
+
+    <VBox GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="toolbar">
+        <Button text="%leftPanel.button.addNewCounter" onAction="#addNewCounter"
+                styleClass="toolbarButton" fx:id="buttonForAddCounter"/>
+        <Button text="%leftPanel.button.startTimer" onAction="#startPauseOrResumeTimer"
+                styleClass="timerButton" fx:id="buttonForControl"/>
+        <Button text="%leftPanel.button.resetTimer" onAction="#resetAllCountersView"
+                styleClass="timerButton" fx:id="buttonForResetTimer"/>
+    </VBox>
+
+    <ScrollPane GridPane.columnIndex="1" GridPane.rowIndex="0" fitToHeight="true" fitToWidth="true"
+                fx:id="scrollPane">
+        <VBox GridPane.columnIndex="1" GridPane.rowIndex="0" fx:id="countersListContainer"/>
+    </ScrollPane>
+
+</GridPane>

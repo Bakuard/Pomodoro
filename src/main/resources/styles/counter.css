@@ -1,0 +1,94 @@
+.counterMainContainer {
+    -fx-alignment: center;
+}
+
+.counterCircle {
+    -fx-border-color: #2382cb;
+    -fx-border-radius: 50%;
+    -fx-border-width: 10;
+    -fx-min-height: 250;
+    -fx-min-width: 250;
+    -fx-max-height: 250;
+    -fx-max-width: 250;
+    -fx-hgap: 10;
+    -fx-padding: 10;
+}
+
+.deleteButton {
+    -fx-pref-width: 40;
+    -fx-pref-height: 40;
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+.deleteButton:hover {
+    -fx-border-color: #2382cb;
+    -fx-border-radius: 50%;
+    -fx-border-width: 3;
+}
+
+.changeTimeButton {
+    -fx-pref-width: 40;
+    -fx-pref-height: 40;
+    -fx-background-radius: 50%;
+    -fx-background-color: transparent;
+    -fx-border-radius: 50%;
+    -fx-border-width: 3;
+    -fx-font-size: 16;
+    -fx-padding: 0;
+}
+.addTimeButton {
+    -fx-border-color: green;
+    -fx-text-fill: green;
+}
+.addTimeButton:hover {
+    -fx-background-color: green;
+    -fx-text-fill: white;
+}
+.subtractButton {
+    -fx-border-color: red;
+    -fx-text-fill: red;
+}
+.subtractButton:hover {
+    -fx-background-color: red;
+    -fx-text-fill: white;
+}
+
+.counterName {
+    -fx-max-width: 160;
+    -fx-max-height: 30;
+    -fx-margin: 140 0 0 0;
+    -fx-alignment: center;
+    -fx-background-color: #1978c1;
+    -fx-text-fill: white;
+    -fx-font-size: 16;
+}
+
+.counterNameEdit {
+    -fx-max-width: 160;
+    -fx-max-height: 30;
+    -fx-margin: 140 0 0 0;
+    -fx-alignment: center;
+    -fx-background-color: white;
+    -fx-text-fill: #1978c1;
+    -fx-font-size: 16;
+    -fx-border-color: #1978c1;
+    -fx-border-width: 2;
+}
+
+.spinner > .text-field {
+    -fx-alignment: center;
+    -fx-background-color: #1978c1;
+    -fx-text-fill: white;
+    -fx-font-size: 22;
+}
+
+.counterLabel {
+    -fx-alignment: center;
+    -fx-background-color: #1978c1;
+    -fx-text-fill: white;
+    -fx-font-size: 22;
+    -fx-min-height: 45;
+    -fx-min-width: 60;
+    -fx-max-height: 45;
+    -fx-max-width: 60;
+}
