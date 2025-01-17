@@ -15,11 +15,17 @@ import javafx.stage.Stage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.nio.file.Path;
+
 public class Main extends Application {
 
-    private static final Logger logger = LoggerFactory.getLogger(Main.class.getName());
+    private static Logger logger;
+    private static final Path appDirectory = Path.of(System.getProperty("user.home")).resolve("Pomodoro");
 
     public static void main(String[] args) {
+        System.setProperty("APP_DIRECTORY", appDirectory.toString());
+
+        logger = LoggerFactory.getLogger(Main.class.getName());
         logger.info("Start application");
 
         Application.launch(args);
@@ -45,7 +51,7 @@ public class Main extends Application {
         eventBus = new EventBus();
         resourcesLoader = new ResourcesLoader();
         timerSignalPlayer = new TimerSignalPlayer(resourcesLoader);
-        counterListRepository = new CounterListRepositoryFile();
+        counterListRepository = new CounterListRepositoryFile(appDirectory);
         counterList = counterListRepository.findAll().findFirst().orElse(new CounterList());
         clock = new Clock(() -> {
             eventBus.post(new TimeUpdateEvent());

@@ -20,9 +20,11 @@ import java.util.stream.Stream;
 public class CounterListRepositoryFile implements CounterListRepository {
 
     private final Gson gson;
+    private final Path saveFile;
     private List<CounterList> counterLists;
 
-    public CounterListRepositoryFile() {
+    public CounterListRepositoryFile(Path appDirectory) {
+        this.saveFile = appDirectory.resolve("saves").resolve("save.json");
         gson = new GsonBuilder().
                 setPrettyPrinting().
                 serializeNulls().
@@ -74,7 +76,6 @@ public class CounterListRepositoryFile implements CounterListRepository {
 
 
     private void createFileIfNotExists() throws IOException {
-        Path saveFile = Path.of("./saves/save.json");
         if(!Files.exists(saveFile)) {
             Files.createDirectories(saveFile.getParent());
             Files.createFile(saveFile);
@@ -82,13 +83,13 @@ public class CounterListRepositoryFile implements CounterListRepository {
     }
 
     private boolean isFileEmpty() {
-        File file = new File("./saves/save.json");
+        File file = saveFile.toFile();
         return file.length() == 0;
     }
 
     private void saveAll(List<CounterList> counterLists) throws IOException {
         try(JsonWriter writer = gson.newJsonWriter(
-                new OutputStreamWriter(new FileOutputStream("./saves/save.json"), StandardCharsets.UTF_8))) {
+                new OutputStreamWriter(new FileOutputStream(saveFile.toFile()), StandardCharsets.UTF_8))) {
             writer.beginArray();
             for(CounterList counterList : counterLists) {
                 writer.beginObject().
@@ -120,7 +121,7 @@ public class CounterListRepositoryFile implements CounterListRepository {
 
             if(!isFileEmpty()) {
                 try (JsonReader reader = gson.newJsonReader(
-                        new InputStreamReader(new FileInputStream("./saves/save.json"), StandardCharsets.UTF_8))) {
+                        new InputStreamReader(new FileInputStream(saveFile.toFile()), StandardCharsets.UTF_8))) {
                     if (reader.hasNext()) {
                         reader.beginArray();
                         while (reader.hasNext()) counterLists.add(loadCounterList(reader));
